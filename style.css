@@ -1,0 +1,488 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --pink: #ff91ae;
+    --light-pink: #ffc5d4;
+    --purple: #a18cd1;
+    --dark: #17121c;
+    --white: #fff0f5;
+    --muted: #d3c2d2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    font-family: "Vazirmatn", sans-serif;
+    background: var(--dark);
+    color: var(--white);
+    line-height: 2;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* navigation */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 7%;
+    background: rgba(23, 18, 28, 0.9);
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(255, 145, 174, 0.18);
+}
+
+.logo {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--light-pink);
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: var(--muted);
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+/* hero */
+
+.hero {
+    min-height: 610px;
+    position: relative;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse at 50% 40%,
+            rgba(161, 140, 209, 0.25),
+            transparent 60%),
+        linear-gradient(135deg, #322033, #17121c 70%);
+}
+
+.hero::before,
+.hero::after {
+    content: "✿";
+    position: absolute;
+    color: rgba(255, 145, 174, 0.1);
+    font-size: 220px;
+    pointer-events: none;
+}
+
+.hero::before {
+    top: -60px;
+    right: -30px;
+}
+
+.hero::after {
+    bottom: -100px;
+    left: -30px;
+}
+
+.hero-content {
+    max-width: 800px;
+    position: relative;
+    z-index: 1;
+    animation: appear 1.2s ease both;
+}
+
+.little-heart {
+    color: var(--pink);
+    font-size: 3rem;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--pink);
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(2.7rem, 7vw, 5.3rem);
+    font-weight: 800;
+    line-height: 1.5;
+    margin: 12px 0;
+    background: linear-gradient(
+        120deg, #fff, #ffb4c9, #d8b8ff
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.hero-text {
+    color: var(--muted);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.main-button {
+    display: inline-block;
+    padding: 12px 30px;
+    border: 1px solid var(--pink);
+    border-radius: 50px;
+    background: rgba(255, 145, 174, 0.12);
+    color: var(--light-pink);
+    transition: 0.3s;
+}
+
+.main-button:hover {
+    background: var(--pink);
+    color: var(--dark);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 35px rgba(255, 145, 174, 0.2);
+}
+
+.floating-heart {
+    position: absolute;
+    color: var(--pink);
+    font-size: 2rem;
+    animation: float 4s ease-in-out infinite;
+}
+
+.heart-one {
+    top: 0;
+    right: 5%;
+}
+
+.heart-two {
+    bottom: 10%;
+    left: 10%;
+    animation-delay: 1s;
+}
+
+.heart-three {
+    top: 50%;
+    right: -8%;
+    animation-delay: 2s;
+}
+
+/* message */
+
+.message-section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 100px 30px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.message-image {
+    min-height: 380px;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    text-align: center;
+    padding: 25px;
+
+    background:
+        radial-gradient(circle at 50% 35%,
+            rgba(255, 197, 212, 0.35),
+            transparent 25%),
+        linear-gradient(145deg, #59435f, #282039 65%, #17121c);
+
+    border: 1px solid rgba(255, 197, 212, 0.2);
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
+}
+
+.moon {
+    font-size: 7rem;
+    color: #ffe5b5;
+    text-shadow: 0 0 50px rgba(255, 229, 181, 0.4);
+    animation: float 5s ease-in-out infinite;
+}
+
+.message-image span {
+    color: var(--light-pink);
+}
+
+.message-content h2 {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    margin: 8px 0 20px;
+}
+
+.message-content h2 span {
+    color: var(--pink);
+}
+
+.message-content p {
+    color: var(--muted);
+    margin: 12px 0;
+}
+
+.message-content .special-text {
+    color: var(--light-pink);
+    font-weight: 600;
+    margin-top: 22px;
+}
+
+.signature {
+    color: var(--pink);
+    margin-top: 25px;
+    font-size: 1.1rem;
+}
+
+/* cards */
+
+.reasons {
+    max-width: 1150px;
+    padding: 40px 30px 100px;
+    margin: auto;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.section-heading h2 {
+    font-size: 2rem;
+    margin-top: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.card {
+    text-align: center;
+    padding: 30px 18px;
+    border-radius: 20px;
+    background: linear-gradient(
+        145deg,
+        rgba(255, 255, 255, 0.045),
+        rgba(255, 145, 174, 0.025)
+    );
+    border: 1px solid rgba(255, 197, 212, 0.15);
+    transition: 0.35s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: var(--pink);
+    box-shadow: 0 15px 35px rgba(255, 145, 174, 0.08);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    display: inline-block;
+    margin-bottom: 12px;
+    transition: 0.3s;
+}
+
+.card:hover .card-icon {
+    transform: scale(1.15) rotate(-5deg);
+}
+
+.card h3 {
+    color: var(--light-pink);
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* final message */
+
+.forever {
+    text-align: center;
+    padding: 80px 25px;
+    background: linear-gradient(
+        135deg,
+        rgba(161, 140, 209, 0.12),
+        rgba(255, 145, 174, 0.08)
+    );
+    border-top: 1px solid rgba(255, 197, 212, 0.1);
+}
+
+.big-heart {
+    display: inline-block;
+    font-size: 3.5rem;
+    color: var(--pink);
+    animation: heartbeat 1.5s infinite;
+}
+
+.forever h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    margin: 15px 0;
+}
+
+.forever p {
+    color: var(--muted);
+    max-width: 650px;
+    margin: 10px auto;
+}
+
+.forever .last-line {
+    color: var(--light-pink);
+    margin-top: 25px;
+    font-weight: 600;
+}
+
+.footer-hearts {
+    display: block;
+    color: var(--pink);
+    font-size: 1.5rem;
+    margin-top: 20px;
+    letter-spacing: 12px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #a99aab;
+    font-size: 0.85rem;
+}
+
+/* animations */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* responsive */
+
+@media (max-width: 850px) {
+    .message-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .message-image {
+        min-height: 280px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .navbar {
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px;
+    }
+
+    nav {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        font-size: 0.8rem;
+    }
+
+    .hero {
+        min-height: 520px;
+        padding: 55px 20px;
+    }
+
+    .hero-text {
+        font-size: 0.95rem;
+    }
+
+    .message-section {
+        padding: 65px 22px;
+    }
+
+    .reasons {
+        padding: 20px 18px 65px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.6rem;
+    }
+
+    .cards {
+        gap: 12px;
+    }
+
+    .card {
+        padding: 22px 12px;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+    }
+
+    .forever {
+        padding: 60px 20px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+}
